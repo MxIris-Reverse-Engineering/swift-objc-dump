@@ -33,7 +33,8 @@ public struct ObjCMethodInfo {
         self.typeEncoding = typeEncoding
         self.isClassMethod = isClassMethod
     }
-    
+
+#if canImport(ObjectiveC)
     /// Initializes a new instance of `ObjCMethodInfo`.
     /// - Parameters:
     ///   - method: Method of the target for which information is to be obtained.
@@ -72,6 +73,7 @@ public struct ObjCMethodInfo {
             isClassMethod: isClassMethod
         )
     }
+#endif
 }
 
 extension ObjCMethodInfo {

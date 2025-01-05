@@ -78,7 +78,8 @@ public struct ObjCClassInfo {
         self.classMethods = classMethods
         self.methods = methods
     }
-    
+
+#if canImport(ObjectiveC)
     /// Initializes a new instance of `ObjCClassInfo`.
     /// - Parameter cls: Class of the target for which information is to be obtained.
     public init(_ cls: AnyClass) {
@@ -117,6 +118,7 @@ public struct ObjCClassInfo {
             methods: Self.methods(of: cls, isInstance: true)
         )
     }
+#endif
 }
 
 extension ObjCClassInfo {
@@ -170,6 +172,7 @@ extension ObjCClassInfo {
     }
 }
 
+#if canImport(ObjectiveC)
 extension ObjCClassInfo {
     public static func protocols(
         of cls: AnyClass
@@ -247,3 +250,4 @@ extension ObjCClassInfo {
             }
     }
 }
+#endif

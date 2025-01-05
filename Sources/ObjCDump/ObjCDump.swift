@@ -1,5 +1,6 @@
 import Foundation
 
+#if canImport(ObjectiveC)
 // MARK: - Functions for Class
 
 /// Obtain informations about the class.
@@ -97,3 +98,4 @@ public func methods(
         of: `protocol`, isRequired: isRequired, isInstance: isInstance
     )
 }
+#endif
