@@ -1,3 +1,5 @@
+#if canImport(ObjectiveC)
+
 import XCTest
 @testable import ObjCDump
 
@@ -19,3 +21,5 @@ final class ObjCDumpTests: XCTestCase {
         print(info.headerString)
     }
 }
+
+#endif

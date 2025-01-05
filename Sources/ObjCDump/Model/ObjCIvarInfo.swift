@@ -32,7 +32,8 @@ public struct ObjCIvarInfo {
         self.typeEncoding = typeEncoding
         self.offset = offset
     }
-    
+
+#if canImport(ObjectiveC)
     /// Initializes a new instance of `ObjCIvarInfo`.
     /// - Parameter ivar: Ivar of the target for which information is to be obtained.
     public init?(_ ivar: Ivar) {
@@ -47,6 +48,7 @@ public struct ObjCIvarInfo {
             offset: ivar_getOffset(ivar)
         )
     }
+#endif
 }
 
 extension ObjCIvarInfo {

@@ -32,7 +32,8 @@ public struct ObjCPropertyInfo {
         self.attributesString = attributes
         self.isClassProperty = isClassProperty
     }
-    
+
+#if canImport(ObjectiveC)
     /// Initializes a new instance of `ObjCPropertyInfo`.
     /// - Parameters:
     ///   - property: Property of the target for which information is to be obtained.
@@ -51,6 +52,7 @@ public struct ObjCPropertyInfo {
             isClassProperty: isClassProperty
         )
     }
+#endif
 }
 
 extension ObjCPropertyInfo {

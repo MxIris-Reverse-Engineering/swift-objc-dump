@@ -72,7 +72,8 @@ public struct ObjCProtocolInfo {
         self.optionalClassMethods = optionalClassMethods
         self.optionalMethods = optionalMethods
     }
-    
+
+#if canImport(ObjectiveC)
     /// Initializes a new instance of `ObjCProtocolInfo`.
     /// - Parameter `protocol`: Protocol of the target for which information is to be obtained.
     public init(_ `protocol`: Protocol) {
@@ -120,6 +121,7 @@ public struct ObjCProtocolInfo {
             )
         )
     }
+#endif
 }
 
 extension ObjCProtocolInfo {
@@ -188,6 +190,7 @@ extension ObjCProtocolInfo {
     }
 }
 
+#if canImport(ObjectiveC)
 extension ObjCProtocolInfo {
     public static func protocols(
         of `protocol`: Protocol
@@ -241,3 +244,4 @@ extension ObjCProtocolInfo {
             }
     }
 }
+#endif
