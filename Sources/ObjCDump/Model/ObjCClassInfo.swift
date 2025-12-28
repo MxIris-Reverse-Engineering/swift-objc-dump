@@ -212,7 +212,11 @@ extension ObjCClassInfo {
     ) -> [ObjCPropertyInfo] {
         var cls: AnyClass = cls
         if !isInstance {
-            cls = objc_getMetaClass(NSStringFromClass(cls)) as! AnyClass
+            guard let _metaclass = objc_getMetaClass(NSStringFromClass(cls)),
+                  let metaclass = _metaclass as? AnyClass else {
+                return []
+            }
+            cls = metaclass
         }
 
         var count: UInt32 = 0
@@ -234,7 +238,11 @@ extension ObjCClassInfo {
     ) -> [ObjCMethodInfo] {
         var cls: AnyClass = cls
         if !isInstance {
-            cls = objc_getMetaClass(NSStringFromClass(cls)) as! AnyClass
+            guard let _metaclass = objc_getMetaClass(NSStringFromClass(cls)),
+                  let metaclass = _metaclass as? AnyClass else {
+                return []
+            }
+            cls = metaclass
         }
 
         var count: UInt32 = 0
