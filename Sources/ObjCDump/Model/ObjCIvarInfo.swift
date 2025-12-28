@@ -10,7 +10,7 @@ import Foundation
 import ObjCTypeDecodeKit
 
 /// Structure for representing objc instance variable information.
-public struct ObjCIvarInfo {
+public struct ObjCIvarInfo: Sendable {
     /// Name of the Ivar
     public let name: String
     /// Encoded type of the Ivar

@@ -8,7 +8,7 @@
 
 import Foundation
 
-public enum ObjCModifier: CaseIterable, Equatable {
+public enum ObjCModifier: CaseIterable, Sendable, Equatable {
     case complex
     case atomic
     case const

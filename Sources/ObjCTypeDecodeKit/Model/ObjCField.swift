@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct ObjCField: Equatable {
+public struct ObjCField: Sendable, Equatable {
     public let type: ObjCType
     public var name: String?
     public var bitWidth: Int?
