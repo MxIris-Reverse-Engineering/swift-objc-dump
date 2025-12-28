@@ -31,10 +31,9 @@ extension ObjCType {
                     .joined(separator: " ")
             }
         // Objective-C BOOL types may be represented by signed char or by C/C++ bool types.
-        // This means that the type encoding may be represented as C(c) or as B.
+        // This means that the type encoding may be represented as `c` or as `B`.
         // [reference](https://github.com/apple-oss-distributions/objc4/blob/01edf1705fbc3ff78a423cd21e03dfc21eb4d780/runtime/objc.h#L61-L86)
-        case .char: fallthrough
-        case .uchar:
+        case .char:
             return "BOOL"
         default:
             break
