@@ -9,7 +9,7 @@
 import Foundation
 
 // https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ObjCRuntimeGuide/Articles/ocrtPropertyIntrospection.html#//apple_ref/doc/uid/TP40008048-CH101-SW1
-public enum ObjCPropertyAttribute: Equatable {
+public enum ObjCPropertyAttribute: Sendable, Equatable {
     case type(ObjCType?) // T
     case readonly // R
     case copy // C

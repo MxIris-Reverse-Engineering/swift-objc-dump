@@ -11,7 +11,7 @@ import ObjCTypeDecodeKit
 
 /// Structure for representing objc method information.
 @dynamicMemberLookup
-public struct ObjCMethodInfo {
+public struct ObjCMethodInfo: Sendable {
     /// Name of the method
     public let name: String
     /// Encoded method type of the method

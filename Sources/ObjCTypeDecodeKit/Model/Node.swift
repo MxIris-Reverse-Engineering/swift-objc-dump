@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct Node {
+public struct Node: Sendable {
     public var decoded: ObjCType?
     public var trailing: String?
 }

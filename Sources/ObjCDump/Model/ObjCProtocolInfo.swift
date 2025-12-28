@@ -9,7 +9,7 @@
 import Foundation
 
 /// Structure for representing objc protocol information.
-public struct ObjCProtocolInfo {
+public struct ObjCProtocolInfo: Sendable {
     /// Name of the protocol
     public let name: String
 

@@ -8,8 +8,8 @@
 
 import Foundation
 
-public struct ObjCMethodType {
-    public struct ArgumentInfo {
+public struct ObjCMethodType: Sendable {
+    public struct ArgumentInfo: Sendable {
         public let type: ObjCType
         public let offset: Int
     }

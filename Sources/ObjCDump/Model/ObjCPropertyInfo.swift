@@ -10,7 +10,7 @@ import Foundation
 import ObjCTypeDecodeKit
 
 /// Structure for representing objc property information.
-public struct ObjCPropertyInfo {
+public struct ObjCPropertyInfo: Sendable {
     /// Name of the property
     public let name: String
     /// Attributes string of the property
