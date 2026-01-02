@@ -10,7 +10,7 @@ import Foundation
 import ObjCTypeDecodeKit
 
 extension ObjCType {
-    var decodedStringForArgument: String {
+    public var decodedStringForArgument: String {
         switch self {
         case .struct(let name, let field):
             if let name {

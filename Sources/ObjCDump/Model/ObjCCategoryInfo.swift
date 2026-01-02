@@ -9,7 +9,7 @@
 import Foundation
 
 /// Structure for representing objc category information.
-public struct ObjCCategoryInfo: Sendable {
+public struct ObjCCategoryInfo: Sendable, Equatable {
     /// Name of the category
     public let name: String
 

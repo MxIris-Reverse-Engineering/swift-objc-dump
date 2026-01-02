@@ -7,8 +7,11 @@
 //
 
 import Foundation
+import SwiftStdlibToolbox
 
-public indirect enum ObjCType: Sendable, Equatable {
+@AssociatedValue(.public)
+@CaseCheckable(.public)
+public indirect enum ObjCType: Sendable, Hashable {
     case `class`
     case selector
 

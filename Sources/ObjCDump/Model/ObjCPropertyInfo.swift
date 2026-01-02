@@ -10,7 +10,7 @@ import Foundation
 import ObjCTypeDecodeKit
 
 /// Structure for representing objc property information.
-public struct ObjCPropertyInfo: Sendable {
+public struct ObjCPropertyInfo: Sendable, Equatable {
     /// Name of the property
     public let name: String
     /// Attributes string of the property
@@ -25,11 +25,11 @@ public struct ObjCPropertyInfo: Sendable {
     ///   - isClassProperty: A boolean value that indicates whatever the property is class property or not.
     public init(
         name: String,
-        attributes: String,
+        attributesString: String,
         isClassProperty: Bool
     ) {
         self.name = name
-        self.attributesString = attributes
+        self.attributesString = attributesString
         self.isClassProperty = isClassProperty
     }
 
@@ -48,7 +48,7 @@ public struct ObjCPropertyInfo: Sendable {
         let _name = property_getName(property)
         self.init(
             name: String(cString: _name),
-            attributes: String(cString: _attributes),
+            attributesString: String(cString: _attributes),
             isClassProperty: isClassProperty
         )
     }

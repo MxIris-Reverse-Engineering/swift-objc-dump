@@ -9,7 +9,7 @@
 import Foundation
 
 /// Structure for representing objc class information.
-public struct ObjCClassInfo: Sendable {
+public struct ObjCClassInfo: Sendable, Equatable {
     /// Name of the class
     public let name: String
     /// Version of the class

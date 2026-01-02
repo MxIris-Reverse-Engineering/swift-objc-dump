@@ -7,19 +7,22 @@
 //
 
 import Foundation
+import SwiftStdlibToolbox
 
 // https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ObjCRuntimeGuide/Articles/ocrtPropertyIntrospection.html#//apple_ref/doc/uid/TP40008048-CH101-SW1
+@AssociatedValue(.public)
+@CaseCheckable(.public)
 public enum ObjCPropertyAttribute: Sendable, Equatable {
-    case type(ObjCType?) // T
-    case readonly // R
-    case copy // C
-    case retain // &
-    case nonatomic // N
-    case getter(name: String) // G
-    case setter(name: String) // S
-    case dynamic // D
-    case weak // W
-    case ivar(name: String) // V
+    case type(ObjCType?)
+    case readonly
+    case copy
+    case retain
+    case nonatomic
+    case getter(name: String)
+    case setter(name: String)
+    case dynamic
+    case weak
+    case ivar(name: String)
 //    case p // P The property is eligible for garbage collection.
 //    case t // t Specifies the type using old-style encoding.
     case other(String)

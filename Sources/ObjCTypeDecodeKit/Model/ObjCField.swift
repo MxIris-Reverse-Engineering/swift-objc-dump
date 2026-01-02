@@ -8,12 +8,12 @@
 
 import Foundation
 
-public struct ObjCField: Sendable, Equatable {
+public struct ObjCField: Sendable, Hashable {
     public let type: ObjCType
     public var name: String?
     public var bitWidth: Int?
 
-    package init(
+    public init(
         type: ObjCType,
         name: String? = nil,
         bitWidth: Int? = nil
