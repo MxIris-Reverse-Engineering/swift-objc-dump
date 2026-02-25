@@ -19,6 +19,7 @@ public struct ObjCMethodInfo: Sendable, Equatable {
     /// A boolean value that indicates whatever the method is class method or not.
     public let isClassMethod: Bool
     
+    public let imp: UInt64
     /// Initializes a new instance of `ObjCMethodInfo`.
     /// - Parameters:
     ///   - name: Name of the method
@@ -27,11 +28,13 @@ public struct ObjCMethodInfo: Sendable, Equatable {
     public init(
         name: String,
         typeEncoding: String,
-        isClassMethod: Bool
+        isClassMethod: Bool,
+        imp: UInt64,
     ) {
         self.name = name
         self.typeEncoding = typeEncoding
         self.isClassMethod = isClassMethod
+        self.imp = imp
     }
 
 #if canImport(ObjectiveC)
@@ -50,7 +53,8 @@ public struct ObjCMethodInfo: Sendable, Equatable {
         self.init(
             name: NSStringFromSelector(_name),
             typeEncoding: String(cString: _typeEncoding),
-            isClassMethod: isClassMethod
+            isClassMethod: isClassMethod,
+            imp: 0,
         )
     }
     
@@ -70,7 +74,8 @@ public struct ObjCMethodInfo: Sendable, Equatable {
         self.init(
             name: NSStringFromSelector(_name),
             typeEncoding: String(cString: _typeEncoding),
-            isClassMethod: isClassMethod
+            isClassMethod: isClassMethod,
+            imp: 0,
         )
     }
 #endif
