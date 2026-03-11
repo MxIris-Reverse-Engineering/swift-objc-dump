@@ -19,7 +19,7 @@ let package = Package(
         ),
     ],
     dependencies: [
-        .package(url: "https://github.com/Mx-Iris/FrameworkToolbox", branch: "main"),
+        .package(url: "https://github.com/Mx-Iris/FrameworkToolbox", from: "0.4.0"),
     ],
     targets: [
         .target(
